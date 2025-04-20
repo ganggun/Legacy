@@ -25,7 +25,7 @@ public class ExceptionAdvice {
         ErrorResponse response = ErrorResponse.builder()
                 .status(ex.getError().getStatus().value())
                 .message(ex.getError().getMessage())
-                .build();
+                .build();//DD
         return new ResponseEntity<ErrorResponse>(response, ex.getError().getStatus());
     }
 }
