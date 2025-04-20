@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    url: ${DB_URL}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: ${DB_PW}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  cache:
+    type: redis
+application:
+  jwt:
+    refresh-exp: ${REFRESH_EXP}
+    access-exp: ${ACCESS_EXP}
+    prefix: Bearer
+    header: Authorization
+    secretKey: ${SECRET_KEY}
+
+springdoc:
+  api-docs:
+    enabled: true
+    version: openapi_3_0
+    path: /v3/api-docs
+
+  swagger-ui:
+    operationsSorter: method
+    path: /swagger-ui.html
